@@ -21,8 +21,23 @@ public class CaesarCipher {
                 encryptedMsg.setCharAt(i,newChar);
             }
         }
-
         return encryptedMsg.toString();
 
+    }
+
+    public String encryptTwoKeys(String input, int key1, int key2){
+        StringBuilder encryptedMsg = new StringBuilder(input);
+        String oddMsg = encrypt(input, key1);
+        String evenMsg = encrypt(input, key2);
+        for(int i = 0; i < encryptedMsg.length(); i++)
+        {
+            if (i % 2 == 0){
+                encryptedMsg.setCharAt(i,oddMsg.charAt(i));
+            }
+            else{
+                encryptedMsg.setCharAt(i,evenMsg.charAt(i));
+            }
+        }
+        return encryptedMsg.toString();
     }
 }

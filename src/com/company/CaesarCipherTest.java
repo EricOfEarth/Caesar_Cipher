@@ -17,4 +17,11 @@ class CaesarCipherTest {
         assertEquals("Cfopq Ibdflk", test3, "encrypt should work");
     }
 
+    @Test
+    void encryptTwoKeys(){
+        CaesarCipher c = new CaesarCipher();
+        String test1 = c.encryptTwoKeys("First Legion", 23, 17);
+        assertEquals("Czojq Ivdzle", test1, "encrypt two keys should work");
+    }
+
 }
