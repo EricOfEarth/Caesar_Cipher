@@ -2,8 +2,13 @@ package com.company;
 
 public class CaesarBreaker {
 
+    private final String alphabet;
+
+    public CaesarBreaker(){
+        alphabet = "abcdefghijklmnopqrstuvwxyz";
+    }
+
     public int[] countLetters(String message){
-        String alphabet = "abcdefghijklmnopqrstuvwxyz";
         int [] counts = new int[26];
         for(int k = 0; k < message.length(); k++){
             char ch = Character.toLowerCase(message.charAt(k));
